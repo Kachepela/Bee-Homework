@@ -33,14 +33,17 @@ userpassword.Contains('!');
 if (passwordlength < 8)
 {
     Console.WriteLine(" Ошибка! Неверная длина. \n Длинна пароля минимум 8 символов.");
+    return;
 }
 else if (userpassword.Contains(year))
 {
     Console.WriteLine(" Ошибка! Пароль не должен содержать Ваш день рождения");
+    return;
 }
 else if (userpassword.StartsWith("п") || userpassword.StartsWith("p"))
 {
     Console.WriteLine("Ошибка! Пароль не должен начинаться с русской буквы “п” или английской “p”");
+    return;
 }
 else if (userpassword.Contains('!') || userpassword.Contains('%') || userpassword.Contains('*') || userpassword.Contains(';') || userpassword.Contains('$') || userpassword.Contains('^'))
 {
