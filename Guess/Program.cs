@@ -2,20 +2,34 @@
 int secret = new Random().Next(1, 500);
 Console.WriteLine("Введите число");
 int number;
-int.TryParse(Console.ReadLine(), out number);
 
-if (secret==number )
-{
-    Console.WriteLine(" Поздравляем! Вы угадали. ");
+while (true)
+    { if (!int.TryParse(Console.ReadLine(), out number))
+    {
+        continue;
+    }
+    if (secret == number)
+    {
+        Console.WriteLine(" Поздравляем! Вы угадали. ");
+        break;
+    }
+     if (number < 0 || number > 500)
+    {
+        Console.WriteLine("Ошибка.Вы ввели не верное значение. Введите цифру от 1 до 500.");
+    }
+    else
+    {
+        Console.WriteLine("Иии...барабанная дробь\n  Вы не угадали. ");
+    }
+     if (secret>number)
+    {
+        Console.WriteLine("Загаданое число больше ,чем то что вы ввели.");
+    }
+     if (secret < number)
+    {
+        Console.WriteLine(" Загаданное число меньше , чем вы ввели. ");
+    }
 }
-else if (number<0 || number > 500)
-{
-            Console.WriteLine("Ошибка.Вы ввели не верное значение. ВВедите цифру от 1 до 500.");
-}
-else
-{
-    Console.WriteLine("Иии...барабанная дробь\n  Вы не угадали. ");
-} 
-    
+Console.ReadKey();
 
 
