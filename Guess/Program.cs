@@ -1,4 +1,4 @@
-﻿Console.WriteLine("\t Игра угадайка.\n Угадайте случайное число от 1 до 500");
+Console.WriteLine("\t Игра угадайка.\n Угадайте случайное число от 1 до 500");
 int secret = new Random().Next(1, 500);
 Console.WriteLine("Введите число");
 int number;
